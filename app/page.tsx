@@ -23,7 +23,7 @@ export default function Home() {
             EXECUTIVE PROFILE
           </h1>
 
-          <nav className="hidden md:flex gap-8 text-sm text-gray-300">
+          <nav className="hidden md:flex gap-6 text-sm text-gray-300">
             <a href="#overview">Overview</a>
             <a href="#experience">Experience</a>
             <a href="#contact">Contact</a>
@@ -56,7 +56,7 @@ export default function Home() {
             gas processing, commissioning, and industrial operations.
           </p>
 
-          {/* ACTION PANEL (REALISTIC) */}
+          {/* ACTION PANEL */}
           <div className="mt-10 flex flex-wrap gap-4 justify-center">
 
             <button
@@ -81,20 +81,12 @@ export default function Home() {
               Contact
             </a>
 
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              className="px-6 py-3 border border-zinc-700 rounded-xl text-gray-300"
-            >
-              LinkedIn
-            </a>
-
           </div>
 
         </div>
       </section>
 
-      {/* KPI SECTION */}
+      {/* KPI */}
       <section id="experience" className="px-6 py-24 max-w-6xl mx-auto">
 
         <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-10">
@@ -104,10 +96,7 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-6">
 
           {kpis.map((k, i) => (
-            <div
-              key={i}
-              className="p-6 border border-zinc-800 rounded-xl bg-zinc-900/30"
-            >
+            <div key={i} className="p-6 border border-zinc-800 rounded-xl bg-zinc-900/30">
               <p className="text-gray-400">{k.label}</p>
               <h3 className="text-2xl font-bold mt-2">{k.value}</h3>
             </div>
@@ -133,10 +122,7 @@ export default function Home() {
               "EPC Project Execution Support",
               "Multinational Team Leadership"
             ].map((item, i) => (
-              <div
-                key={i}
-                className="p-6 border border-zinc-800 rounded-xl"
-              >
+              <div key={i} className="p-6 border border-zinc-800 rounded-xl">
                 {item}
               </div>
             ))}
@@ -159,7 +145,7 @@ export default function Home() {
 
       </section>
 
-      {/* CV VIEWER MODAL */}
+      {/* CV MODAL */}
       {showCV && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
 
@@ -167,7 +153,7 @@ export default function Home() {
 
             <button
               onClick={() => setShowCV(false)}
-              className="absolute top-3 right-4 text-black font-bold text-xl"
+              className="absolute top-3 right-4 text-black text-xl font-bold"
             >
               ✕
             </button>
