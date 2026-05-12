@@ -44,7 +44,7 @@ export default function Home() {
           />
 
           <h1 className="text-4xl md:text-6xl font-bold mt-6">
-            Abdelfattah Ali Eliwa
+            Abdelfattah Ali Elewa
           </h1>
 
           <p className="text-yellow-400 mt-3 tracking-[6px] uppercase text-sm">
