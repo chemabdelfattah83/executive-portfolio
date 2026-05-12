@@ -1,32 +1,12 @@
 "use client";
 
-import { useMemo } from "react";
-import {
-  ResponsiveContainer,
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  Tooltip,
-  CartesianGrid
-} from "recharts";
-
 export default function Home() {
 
   const kpis = [
     { label: "Years Experience", value: "20+" },
-    { label: "Projects Delivered", value: "30+" },
     { label: "Plants Commissioned", value: "12+" },
     { label: "Downtime Reduction", value: "35%" }
   ];
-
-  const data = useMemo(() => [
-    { year: "2015", performance: 70 },
-    { year: "2017", performance: 78 },
-    { year: "2019", performance: 85 },
-    { year: "2021", performance: 92 },
-    { year: "2023", performance: 97 }
-  ], []);
 
   return (
     <main className="bg-black text-white min-h-screen">
@@ -40,7 +20,6 @@ export default function Home() {
 
           <nav className="hidden md:flex gap-8 text-sm text-gray-300">
             <a href="#overview">Overview</a>
-            <a href="#dashboard">Dashboard</a>
             <a href="#experience">Experience</a>
             <a href="#impact">Impact</a>
             <a href="#contact">Contact</a>
@@ -54,10 +33,9 @@ export default function Home() {
 
         <div className="relative z-10">
 
-          {/* removed framer-motion */}
           <img
             src="/profile.jpg"
-            alt="CEO"
+            alt="Executive"
             className="w-56 h-56 rounded-full mx-auto border-4 border-yellow-500 object-cover"
           />
 
@@ -78,13 +56,13 @@ export default function Home() {
       </section>
 
       {/* KPI DASHBOARD */}
-      <section id="dashboard" className="px-6 py-24 max-w-7xl mx-auto">
+      <section id="experience" className="px-6 py-24 max-w-7xl mx-auto">
 
         <h2 className="text-3xl md:text-5xl font-bold text-yellow-400 mb-14">
-          Executive Performance Dashboard
+          Executive Performance Overview
         </h2>
 
-        <div className="grid md:grid-cols-4 gap-6 mb-16">
+        <div className="grid md:grid-cols-4 gap-6">
           {kpis.map((k, i) => (
             <div key={i} className="border border-zinc-800 p-8 rounded-2xl bg-zinc-900/40 hover:border-yellow-500 transition">
               <p className="text-gray-400 text-sm">{k.label}</p>
@@ -94,23 +72,10 @@ export default function Home() {
             </div>
           ))}
         </div>
-
-        {/* PERFORMANCE CHART */}
-        <div className="h-96 border border-zinc-800 rounded-2xl p-6 bg-zinc-900/30">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={data}>
-              <CartesianGrid />
-              <XAxis dataKey="year" />
-              <YAxis />
-              <Tooltip />
-              <Line type="monotone" dataKey="performance" strokeWidth={2} />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
       </section>
 
       {/* EXPERIENCE */}
-      <section id="experience" className="bg-zinc-950 py-24 px-6">
+      <section className="bg-zinc-950 py-24 px-6">
         <div className="max-w-7xl mx-auto">
 
           <h2 className="text-3xl md:text-5xl font-bold text-yellow-400 mb-14">
@@ -150,7 +115,7 @@ export default function Home() {
       <section id="contact" className="bg-zinc-950 py-24 text-center px-6">
 
         <h2 className="text-3xl md:text-5xl font-bold text-yellow-400 mb-10">
-          Contact Executive Office
+          Contact ME
         </h2>
 
         <div className="text-gray-300 space-y-3">
