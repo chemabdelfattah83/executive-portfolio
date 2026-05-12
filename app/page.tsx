@@ -74,8 +74,9 @@ export default function Home() {
               Download CV
             </a>
 
+            {/* ✅ FIXED CONTACT */}
             <a
-              href="mailto:chem.abdelfattah83@gmail.com"
+              href="#contact"
               className="px-6 py-3 border border-zinc-700 rounded-xl text-gray-300"
             >
               Contact
@@ -132,7 +133,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT */}
+      {/* CONTACT SECTION (ANCHOR TARGET) */}
       <section id="contact" className="px-6 py-24 text-center">
 
         <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-6">
@@ -145,11 +146,11 @@ export default function Home() {
 
       </section>
 
-      {/* CV MODAL */}
+      {/* ✅ IMPROVED CV MODAL */}
       {showCV && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
 
-          <div className="bg-white w-full max-w-5xl h-[90vh] rounded-xl relative overflow-hidden">
+          <div className="bg-white w-full max-w-5xl h-[90vh] rounded-xl relative overflow-hidden shadow-2xl">
 
             <button
               onClick={() => setShowCV(false)}
