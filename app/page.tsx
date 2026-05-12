@@ -6,13 +6,13 @@ export default function Home() {
   return (
     <main className="relative text-white min-h-screen overflow-hidden bg-black">
 
-      {/* Animated Background */}
+      {/* Background Glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-950 to-black animate-pulse opacity-90"></div>
 
       {/* HERO */}
       <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-6">
 
-        {/* Profile */}
+        {/* Profile Image */}
         <motion.div
           initial={{ scale: 0.7, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -36,14 +36,20 @@ export default function Home() {
           Abdelfattah Ali Eliwa
         </motion.h1>
 
-        {/* Title Badge */}
-        <div className="mt-4 px-6 py-2 border border-yellow-500 rounded-full text-yellow-400 tracking-[4px] uppercase text-sm backdrop-blur-md bg-white/5">
-          Operations & Commissioning Executive
+        {/* TITLE (SPECIALIST) */}
+        <div className="mt-5 space-y-2">
+          <p className="text-yellow-400 tracking-[4px] uppercase text-lg md:text-xl font-semibold">
+            Senior Operations & Commissioning Specialist
+          </p>
+
+          <p className="text-gray-400 tracking-[3px] uppercase text-sm md:text-base">
+            Refinery • Gas Processing • Petrochemical Plants
+          </p>
         </div>
 
-        {/* Description */}
+        {/* Summary */}
         <p className="max-w-3xl text-gray-300 mt-8 leading-8 text-lg">
-          Senior Oil & Gas Executive with 20+ years of experience in refinery,
+          Senior Oil & Gas professional with 20+ years of experience in refinery,
           gas processing, petrochemical plants, commissioning, startup, and
           operational excellence across international mega projects.
         </p>
@@ -66,7 +72,7 @@ export default function Home() {
           </a>
         </div>
 
-        {/* Mini KPIs */}
+        {/* KPIs */}
         <div className="grid grid-cols-3 gap-6 mt-14 text-center text-sm text-gray-400">
           <div>
             <p className="text-yellow-400 text-2xl font-bold">20+</p>
@@ -94,9 +100,9 @@ export default function Home() {
         <div className="backdrop-blur-md bg-white/5 border border-zinc-800 p-10 rounded-3xl shadow-2xl">
           <p className="text-gray-300 leading-9 text-lg">
             Proven leader in upstream and downstream operations with strong expertise
-            in commissioning, troubleshooting, plant optimization, and shutdown/startup
-            management. Recognized for delivering safe operations, improving reliability,
-            and leading multinational engineering teams in high-pressure environments.
+            in commissioning, troubleshooting, plant optimization, shutdown/startup
+            management, and operational excellence. Recognized for delivering safe,
+            reliable, and high-performance plant operations across global projects.
           </p>
         </div>
       </section>
@@ -124,7 +130,7 @@ export default function Home() {
               desc: "Large-scale refinery, utilities and petrochemical project execution."
             },
             {
-              title: "Team Management",
+              title: "Team Leadership",
               desc: "Leading multinational teams and building operational excellence culture."
             }
           ].map((item, i) => (
