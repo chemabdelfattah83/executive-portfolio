@@ -1,173 +1,135 @@
 "use client";
 
-import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Home() {
-
-  const [showCV, setShowCV] = useState(false);
-
-  const kpis = [
-    { label: "Years Experience", value: "20+" },
-    { label: "Plants Commissioned", value: "12+" },
-    { label: "Operational Improvement", value: "Proven" }
-  ];
-
   return (
-    <main className="bg-black text-white min-h-screen">
-
-      {/* NAVBAR */}
-      <header className="fixed top-0 w-full bg-black/80 backdrop-blur-md border-b border-zinc-900 z-50">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-
-          <h1 className="text-yellow-400 font-bold tracking-widest">
-            EXECUTIVE PROFILE
-          </h1>
-
-          <nav className="hidden md:flex gap-6 text-sm text-gray-300">
-            <a href="#overview">Overview</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
-          </nav>
-
-        </div>
-      </header>
+    <main className="bg-gradient-to-b from-black via-zinc-950 to-black text-white min-h-screen">
 
       {/* HERO */}
-      <section id="overview" className="min-h-screen flex items-center justify-center text-center px-6">
+      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6">
 
-        <div>
+        <motion.img
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          src="/profile.jpg"
+          alt="Executive Portrait"
+          className="w-56 h-56 rounded-full border-4 border-yellow-500 object-cover shadow-2xl"
+        />
 
-          <img
-            src="/profile.jpg"
-            alt="Profile"
-            className="w-48 h-48 rounded-full mx-auto border-4 border-yellow-500 object-cover"
-          />
+        <motion.h1
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="text-4xl md:text-7xl font-bold mt-8 tracking-tight"
+        >
+          Abdelfattah Ali Eliwa
+        </motion.h1>
 
-          <h1 className="text-4xl md:text-6xl font-bold mt-6">
-            Abdelfattah Ali Elewa
-          </h1>
+        <p className="text-yellow-400 tracking-[6px] uppercase mt-5 text-lg md:text-xl">
+          Operations & Commissioning Executive
+        </p>
 
-          <p className="text-yellow-400 mt-3 tracking-[6px] uppercase text-sm">
-            Operations • Commissioning • Oil & Gas
-          </p>
+        <p className="max-w-3xl text-gray-300 mt-8 leading-8 text-lg">
+          Senior Oil & Gas Executive with 20+ years of experience in refinery,
+          gas processing, petrochemical plants, commissioning, startup, and
+          operational excellence across international projects.
+        </p>
 
-          <p className="max-w-2xl mx-auto text-gray-400 mt-6 leading-7">
-            Senior operations professional with 20+ years of experience in refinery,
-            gas processing, commissioning, and industrial operations.
-          </p>
+        <div className="flex gap-6 mt-10 flex-wrap justify-center">
+          <a
+            href="/CV.pdf"
+            className="bg-yellow-500 text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition"
+          >
+            Download CV
+          </a>
 
-          {/* ACTION PANEL */}
-          <div className="mt-10 flex flex-wrap gap-4 justify-center">
-
-            <button
-              onClick={() => setShowCV(true)}
-              className="px-6 py-3 bg-yellow-500 text-black rounded-xl font-semibold"
-            >
-              View CV
-            </button>
-
-            <a
-              href="/cv.pdf"
-              download
-              className="px-6 py-3 border border-yellow-500 text-yellow-400 rounded-xl"
-            >
-              Download CV
-            </a>
-
-            {/* ✅ FIXED CONTACT */}
-            <a
-              href="#contact"
-              className="px-6 py-3 border border-zinc-700 rounded-xl text-gray-300"
-            >
-              Contact
-            </a>
-
-          </div>
-
+          <a
+            href="#contact"
+            className="border border-yellow-500 px-8 py-4 rounded-full hover:bg-yellow-500 hover:text-black transition"
+          >
+            Contact
+          </a>
         </div>
       </section>
 
-      {/* KPI */}
-      <section id="experience" className="px-6 py-24 max-w-6xl mx-auto">
-
-        <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-10">
-          Professional Overview
+      {/* ABOUT */}
+      <section className="px-8 md:px-24 py-24">
+        <h2 className="text-3xl md:text-5xl font-bold text-yellow-400 mb-10">
+          Executive Profile
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <p className="text-gray-300 leading-9 max-w-5xl text-lg">
+          Proven leader in upstream and downstream operations with strong expertise
+          in commissioning, troubleshooting, plant optimization, and shutdown/startup
+          management. Recognized for delivering safe operations, improving reliability,
+          and leading multicultural engineering teams in high-pressure environments.
+        </p>
+      </section>
 
-          {kpis.map((k, i) => (
-            <div key={i} className="p-6 border border-zinc-800 rounded-xl bg-zinc-900/30">
-              <p className="text-gray-400">{k.label}</p>
-              <h3 className="text-2xl font-bold mt-2">{k.value}</h3>
-            </div>
+      {/* EXPERIENCE */}
+      <section className="bg-zinc-950 px-8 md:px-24 py-24">
+
+        <h2 className="text-3xl md:text-5xl font-bold text-yellow-400 mb-14">
+          Core Expertise
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-10">
+
+          {[
+            {
+              title: "Operations Leadership",
+              desc: "Refinery & gas processing operations with focus on safety, reliability & optimization."
+            },
+            {
+              title: "Commissioning & Start-Up",
+              desc: "Pre-commissioning, commissioning, performance testing and operational readiness."
+            },
+            {
+              title: "EPC Mega Projects",
+              desc: "Experience in large-scale refinery, utilities and petrochemical projects."
+            },
+            {
+              title: "Team Management",
+              desc: "Leading multinational teams and developing operational excellence culture."
+            }
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.03 }}
+              className="border border-zinc-800 p-8 rounded-2xl bg-zinc-900/40"
+            >
+              <h3 className="text-xl font-semibold text-white">
+                {item.title}
+              </h3>
+              <p className="text-gray-400 mt-4 leading-7">
+                {item.desc}
+              </p>
+            </motion.div>
           ))}
 
         </div>
       </section>
 
-      {/* EXPERIENCE */}
-      <section className="bg-zinc-950 px-6 py-24">
+      {/* CONTACT */}
+      <section id="contact" className="px-8 md:px-24 py-24 text-center">
 
-        <div className="max-w-6xl mx-auto">
-
-          <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-10">
-            Experience Highlights
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-
-            {[
-              "Refinery & Gas Operations Optimization",
-              "Commissioning & Start-up Management",
-              "EPC Project Execution Support",
-              "Multinational Team Leadership"
-            ].map((item, i) => (
-              <div key={i} className="p-6 border border-zinc-800 rounded-xl">
-                {item}
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* CONTACT SECTION (ANCHOR TARGET) */}
-      <section id="contact" className="px-6 py-24 text-center">
-
-        <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-6">
+        <h2 className="text-3xl md:text-5xl font-bold text-yellow-400 mb-10">
           Contact
         </h2>
 
-        <p className="text-gray-400">Bahrain: +973 3702 6658</p>
-        <p className="text-gray-400">Egypt: +20 101 901 7235</p>
-        <p className="text-gray-400">chem.abdelfattah83@gmail.com</p>
+        <div className="text-gray-300 space-y-3 text-lg">
+          <p>📍 Bahrain: +973 3702 6658</p>
+          <p>📍 Egypt: +20 101 901 7235</p>
+          <p>📧 chem.abdelfattah83@gmail.com</p>
+        </div>
+
+        <p className="text-gray-600 mt-10 text-sm">
+          © 2026 Executive Portfolio
+        </p>
 
       </section>
-
-      {/* ✅ IMPROVED CV MODAL */}
-      {showCV && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-
-          <div className="bg-white w-full max-w-5xl h-[90vh] rounded-xl relative overflow-hidden shadow-2xl">
-
-            <button
-              onClick={() => setShowCV(false)}
-              className="absolute top-3 right-4 text-black text-xl font-bold"
-            >
-              ✕
-            </button>
-
-            <iframe
-              src="/cv.pdf"
-              className="w-full h-full"
-            />
-
-          </div>
-
-        </div>
-      )}
 
     </main>
   );
