@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import {
-  Linkedin,
+  LinkedinIcon,
   Mail,
   Phone,
   Download,
@@ -72,7 +73,7 @@ export default function ExecutivePortfolio() {
                   target="_blank"
                   className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700 transition shadow-xl"
                 >
-                  <Linkedin size={18} />
+                  <LinkedinIcon size={18} />
                   LinkedIn
                 </a>
 
@@ -93,6 +94,7 @@ export default function ExecutivePortfolio() {
                   <Download size={18} />
                   View Executive CV
                 </a>
+
               </div>
             </motion.div>
 
@@ -104,6 +106,7 @@ export default function ExecutivePortfolio() {
               className="flex justify-center"
             >
               <div className="relative">
+
                 <div className="absolute inset-0 bg-amber-500 blur-3xl opacity-30 rounded-full"></div>
 
                 <img
@@ -111,8 +114,10 @@ export default function ExecutivePortfolio() {
                   alt="Executive Profile"
                   className="relative w-[320px] lg:w-[420px] rounded-[2rem] border-4 border-white/20 shadow-2xl object-cover"
                 />
+
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>
@@ -234,16 +239,27 @@ export default function ExecutivePortfolio() {
                 className="bg-[#f8fafc] border border-gray-100 rounded-[2rem] p-10 shadow-lg"
               >
                 <div className="flex items-start gap-4">
+
                   <div className="bg-slate-900 text-white p-4 rounded-2xl">
                     <Briefcase />
                   </div>
 
                   <div>
                     <h3 className="text-2xl font-bold">{job.title}</h3>
-                    <p className="text-amber-600 font-semibold mt-1">{job.company}</p>
-                    <p className="text-gray-500 mt-1">{job.period}</p>
-                    <p className="text-gray-700 leading-8 mt-4">{job.desc}</p>
+
+                    <p className="text-amber-600 font-semibold mt-1">
+                      {job.company}
+                    </p>
+
+                    <p className="text-gray-500 mt-1">
+                      {job.period}
+                    </p>
+
+                    <p className="text-gray-700 leading-8 mt-4">
+                      {job.desc}
+                    </p>
                   </div>
+
                 </div>
               </motion.div>
             ))}
@@ -253,11 +269,13 @@ export default function ExecutivePortfolio() {
 
       {/* SYSTEMS */}
       <section className="max-w-7xl mx-auto px-6 py-24">
+
         <h2 className="text-5xl font-black text-center mb-16">
           Technical Systems
         </h2>
 
         <div className="grid md:grid-cols-3 gap-6">
+
           {[
             "Yokogawa CENTUM VP / CS3000",
             "Emerson DeltaV",
@@ -271,7 +289,10 @@ export default function ExecutivePortfolio() {
               className="bg-white rounded-3xl shadow-lg p-8 border border-gray-100 flex items-center gap-4"
             >
               <Settings className="text-amber-600" />
-              <span className="font-medium">{system}</span>
+
+              <span className="font-medium">
+                {system}
+              </span>
             </div>
           ))}
         </div>
@@ -279,6 +300,7 @@ export default function ExecutivePortfolio() {
 
       {/* EDUCATION */}
       <section className="bg-slate-950 text-white py-24">
+
         <div className="max-w-7xl mx-auto px-6">
 
           <h2 className="text-5xl font-black text-center mb-16">
@@ -297,8 +319,14 @@ export default function ExecutivePortfolio() {
                 className="bg-white/10 backdrop-blur-md border border-white/10 rounded-[2rem] p-10 text-center"
               >
                 <Award className="mx-auto mb-4 text-amber-400" size={42} />
-                <h3 className="text-2xl font-bold">{title}</h3>
-                <p className="text-slate-300 mt-3">{year}</p>
+
+                <h3 className="text-2xl font-bold">
+                  {title}
+                </h3>
+
+                <p className="text-slate-300 mt-3">
+                  {year}
+                </p>
               </div>
             ))}
           </div>
@@ -307,6 +335,7 @@ export default function ExecutivePortfolio() {
 
       {/* FOOTER */}
       <footer className="bg-black text-white py-10 text-center">
+
         <p className="text-lg font-medium">
           Executive Portfolio — ABD EL FATTAH ALI ELEWA
         </p>
@@ -314,7 +343,9 @@ export default function ExecutivePortfolio() {
         <p className="text-slate-400 mt-2">
           Oil & Gas | Refinery | Commissioning | Operational Excellence
         </p>
+
       </footer>
+
     </main>
   );
 }
