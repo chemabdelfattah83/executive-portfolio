@@ -51,6 +51,7 @@ export default function ExecutivePortfolio() {
                 <a
                   href="https://www.linkedin.com/in/abd-el-fattah-ali-elewa-a10124a6"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700 transition shadow-xl font-semibold"
                 >
                   LinkedIn Profile
@@ -58,7 +59,8 @@ export default function ExecutivePortfolio() {
 
                 <a
                   href="/cv.pdf"
-                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-3 rounded-2xl bg-amber-400 hover:bg-amber-500 transition shadow-xl text-black font-bold"
                 >
                   Download CV
@@ -67,12 +69,14 @@ export default function ExecutivePortfolio() {
                 <a
                   href="/cv.pdf"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-3 rounded-2xl bg-white hover:bg-slate-200 transition shadow-xl text-slate-900 font-bold"
                 >
                   View Specialist CV
                 </a>
 
               </div>
+
             </div>
 
             {/* RIGHT */}
@@ -81,7 +85,7 @@ export default function ExecutivePortfolio() {
               <img
                 src="/profile.jpg"
                 alt="Professional Profile"
-                className="w-[340px] lg:w-[440px] rounded-[2rem] shadow-2xl border-4 border-white/20 object-cover"
+                className="w-[340px] lg:w-[440px] h-[440px] object-cover rounded-[2rem] shadow-2xl border-4 border-white/20"
               />
 
             </div>
@@ -171,7 +175,6 @@ export default function ExecutivePortfolio() {
 
           <p className="text-slate-200 leading-8 text-lg">
             Development of Activated Carbon from Agricultural Waste
-            using Banana Peels, Orange Peels, and Date Seeds
             for sustainable environmental applications.
           </p>
 
