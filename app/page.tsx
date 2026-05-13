@@ -6,84 +6,103 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [openCV, setOpenCV] = useState(false);
 
-  // منع scroll عند فتح الـ modal
   useEffect(() => {
     document.body.style.overflow = openCV ? "hidden" : "auto";
   }, [openCV]);
 
   return (
-    <main className="relative text-white min-h-screen overflow-hidden bg-black">
+    <main className="bg-black text-white overflow-x-hidden">
 
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-950 to-black animate-pulse opacity-90" />
-
-      {/* HERO */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-6">
-
-        {/* IMAGE */}
-        <motion.img
-          initial={{ scale: 0.7, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          src="/profile.jpg"
-          className="w-56 h-56 rounded-full border-4 border-yellow-500 shadow-[0_0_40px_rgba(234,179,8,0.4)] object-cover"
-          alt="profile"
+      {/* ================= SEO / GOOGLE ================= */}
+      <head>
+        <title>Abdelfattah Ali Eliwa | Oil & Gas Operations Expert</title>
+        <meta
+          name="description"
+          content="Senior Operations & Commissioning Specialist with 20+ years in Oil & Gas, Refinery, Gas Processing and EPC Mega Projects."
         />
 
-        {/* NAME */}
-        <motion.h1
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-4xl md:text-7xl font-extrabold mt-8 bg-gradient-to-r from-white via-yellow-200 to-yellow-500 text-transparent bg-clip-text"
-        >
-          Abdelfattah Ali Eliwa
-        </motion.h1>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Abdelfattah Ali Eliwa",
+            jobTitle: "Senior Operations & Commissioning Specialist",
+            description:
+              "Oil & Gas professional with 20+ years experience in refinery, gas processing, commissioning and EPC projects.",
+            email: "chem.abdelfattah83@gmail.com",
+          })}
+        </script>
+      </head>
 
-        {/* TITLE */}
-        <p className="text-yellow-400 mt-4 uppercase tracking-[4px]">
-          Senior Operations & Commissioning Specialist
-        </p>
+      {/* ================= BACKGROUND ================= */}
+      <div className="fixed inset-0 bg-gradient-to-b from-black via-zinc-950 to-black" />
+      <div className="fixed inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(234,179,8,0.25),transparent_60%)]" />
 
-        <p className="text-gray-400 uppercase tracking-[3px] text-sm mt-2">
-          Refinery • Gas Processing • Petrochemical Plants
-        </p>
+      {/* ================= NAVBAR ================= */}
+      <div className="fixed top-0 w-full z-50 bg-black/30 backdrop-blur-xl border-b border-zinc-800">
+        <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
 
-        {/* SUMMARY */}
-        <p className="max-w-3xl text-gray-300 mt-8 leading-8 text-lg">
-          Senior Oil & Gas professional with 20+ years of experience in refinery,
-          gas processing, petrochemical plants, commissioning, startup, and operational excellence.
-        </p>
+          <div className="text-yellow-400 font-bold tracking-widest">
+            A.E.E
+          </div>
 
-        {/* BUTTONS */}
-        <div className="flex gap-6 mt-10 flex-wrap justify-center">
+          <div className="hidden md:flex gap-8 text-sm text-gray-300">
+            <a href="#home" className="hover:text-yellow-400">Home</a>
+            <a href="#profile" className="hover:text-yellow-400">Profile</a>
+            <a href="#expertise" className="hover:text-yellow-400">Expertise</a>
+            <a href="#impact" className="hover:text-yellow-400">Impact</a>
+            <a href="#contact" className="hover:text-yellow-400">Contact</a>
+          </div>
 
           <button
             onClick={() => setOpenCV(true)}
-            className="bg-gradient-to-r from-yellow-500 to-yellow-400 text-black px-8 py-4 rounded-full font-bold hover:scale-110 transition"
+            className="bg-yellow-500 text-black px-4 py-2 rounded-full font-bold hover:scale-105 transition"
+          >
+            View CV
+          </button>
+
+        </div>
+      </div>
+
+      {/* ================= HERO ================= */}
+      <section id="home" className="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-28">
+
+        <motion.img
+          initial={{ scale: 0.7, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          className="w-72 h-72 md:w-80 md:h-80 rounded-full border-4 border-yellow-500 shadow-[0_0_140px_rgba(234,179,8,0.5)] object-cover"
+          src="/profile.jpg"
+        />
+
+        <h1 className="text-5xl md:text-7xl font-extrabold mt-10 bg-gradient-to-r from-white via-yellow-200 to-yellow-500 text-transparent bg-clip-text">
+          Abdelfattah Ali Eliwa
+        </h1>
+
+        <p className="text-yellow-400 mt-6 tracking-[10px] uppercase">
+          Oil & Gas Operations Executive
+        </p>
+
+        <p className="text-gray-400 mt-3 tracking-[6px]">
+          Refinery • Gas Processing • EPC Mega Projects
+        </p>
+
+        <p className="max-w-3xl text-gray-300 mt-10 text-xl leading-10">
+          Delivering complex industrial operations, commissioning, startup and
+          optimization across global oil & gas assets for 20+ years.
+        </p>
+
+        <div className="flex gap-5 mt-12 flex-wrap justify-center">
+
+          <button
+            onClick={() => setOpenCV(true)}
+            className="px-10 py-4 bg-yellow-500 text-black rounded-full font-bold hover:scale-105 transition shadow-[0_0_40px_rgba(234,179,8,0.3)]"
           >
             View CV
           </button>
 
           <a
-            href="/CV.pdf"
-            download
-            className="border border-yellow-500 px-8 py-4 rounded-full hover:bg-yellow-500 hover:text-black transition"
-          >
-            Download CV
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/abd-el-fattah-ali-elewa-a10124a6/"
-            target="_blank"
-            className="bg-blue-600 px-8 py-4 rounded-full font-bold hover:scale-110 transition"
-          >
-            LinkedIn
-          </a>
-
-          <a
             href="#contact"
-            className="border border-yellow-500 px-8 py-4 rounded-full hover:bg-yellow-500 hover:text-black transition"
+            className="px-10 py-4 border border-zinc-700 rounded-full hover:border-yellow-500 transition"
           >
             Contact
           </a>
@@ -91,90 +110,95 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section className="px-8 md:px-24 py-24">
-        <h2 className="text-5xl font-bold text-yellow-400 mb-8">
+      {/* ================= PROFILE ================= */}
+      <section id="profile" className="px-6 md:px-32 py-40">
+        <h2 className="text-6xl font-bold text-yellow-400 mb-10">
           Executive Profile
         </h2>
 
-        <div className="bg-white/5 border border-zinc-800 p-10 rounded-3xl backdrop-blur-md">
-          <p className="text-gray-300 leading-8">
-            Proven leader in upstream & downstream operations, commissioning,
-            troubleshooting, shutdown/startup management and operational excellence
-            across global oil & gas projects.
+        <div className="bg-white/5 border border-zinc-800 p-12 rounded-3xl backdrop-blur-xl">
+          <p className="text-gray-300 text-xl leading-10">
+            Senior Oil & Gas leader specializing in refinery operations,
+            commissioning execution, shutdown/startup management, EPC project delivery
+            and industrial performance optimization across international facilities.
           </p>
         </div>
       </section>
 
-      {/* EXPERTISE */}
-      <section className="px-8 md:px-24 py-24">
-        <h2 className="text-5xl font-bold text-yellow-400 mb-12">
+      {/* ================= EXPERTISE ================= */}
+      <section id="expertise" className="px-6 md:px-32 py-40">
+        <h2 className="text-6xl font-bold text-yellow-400 mb-16">
           Core Expertise
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-10">
 
           {[
-            { t: "Operations Leadership", d: "Refinery & gas processing operations." },
-            { t: "Commissioning", d: "Pre-commissioning & startup management." },
-            { t: "EPC Projects", d: "Mega oil & gas project execution." },
-            { t: "Team Leadership", d: "Multinational teams & safety culture." }
+            ["Operations Leadership", "Refinery & Gas Processing Optimization"],
+            ["Commissioning", "Startup & Pre-Commissioning Execution"],
+            ["EPC Projects", "Mega Oil & Gas Project Delivery"],
+            ["Safety Systems", "High-Risk Industrial Operations Management"]
           ].map((x, i) => (
             <motion.div
               key={i}
               whileHover={{ scale: 1.05 }}
-              className="p-8 rounded-3xl bg-white/5 border border-zinc-800 hover:border-yellow-500"
+              className="p-10 rounded-3xl bg-white/5 border border-zinc-800 hover:border-yellow-500 backdrop-blur-xl"
             >
-              <h3 className="text-xl font-bold">{x.t}</h3>
-              <p className="text-gray-400 mt-3">{x.d}</p>
+              <h3 className="text-2xl font-bold">{x[0]}</h3>
+              <p className="text-gray-400 mt-4 text-lg">{x[1]}</p>
             </motion.div>
           ))}
 
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="px-8 md:px-24 py-24 text-center">
-        <h2 className="text-5xl font-bold text-yellow-400 mb-10">
-          Contact
+      {/* ================= IMPACT ================= */}
+      <section id="impact" className="px-6 md:px-32 py-40">
+        <h2 className="text-6xl font-bold text-yellow-400 mb-16">
+          Impact & Achievements
         </h2>
 
-        <div className="bg-white/5 border border-zinc-800 p-10 rounded-3xl">
-          <p>📍 Egypt: +20 101 901 7235</p>
-          <p>📍 Bahrain: +973 3702 6658</p>
-          <p>📧 chem.abdelfattah83@gmail.com</p>
+        <div className="space-y-6 text-gray-300 text-xl leading-10">
+          <p>✔ Delivered refinery & gas plant startups under critical timelines</p>
+          <p>✔ Improved operational efficiency across industrial assets</p>
+          <p>✔ Led multinational EPC commissioning teams</p>
+          <p>✔ Implemented safety and operational excellence frameworks</p>
         </div>
       </section>
 
-      {/* CV MODAL */}
+      {/* ================= CONTACT ================= */}
+      <section id="contact" className="px-6 md:px-32 py-40 text-center">
+        <h2 className="text-6xl font-bold text-yellow-400 mb-12">
+          Contact
+        </h2>
+
+        <div className="bg-white/5 border border-zinc-800 p-12 rounded-3xl backdrop-blur-xl text-lg">
+          <p>📍 Egypt: +20 101 901 7235</p>
+          <p className="mt-3">📍 Bahrain: +973 3702 6658</p>
+          <p className="mt-3">📧 chem.abdelfattah83@gmail.com</p>
+        </div>
+      </section>
+
+      {/* ================= CV MODAL ================= */}
       <AnimatePresence>
         {openCV && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 flex items-center justify-center p-4 z-50"
+            className="fixed inset-0 bg-black/90 flex items-center justify-center p-4 z-50"
           >
-
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              className="relative w-full max-w-5xl h-[90vh] bg-white rounded-2xl overflow-hidden"
+              className="w-full max-w-6xl h-[90vh] bg-white rounded-2xl overflow-hidden relative"
             >
-
               <button
                 onClick={() => setOpenCV(false)}
-                className="absolute top-3 right-3 bg-red-500 text-white px-4 py-2 rounded-lg z-10"
+                className="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-lg z-10"
               >
                 Close
               </button>
 
-              <iframe
-                src="/CV.pdf"
-                className="w-full h-full"
-              />
-
+              <iframe src="/CV.pdf" className="w-full h-full" />
             </motion.div>
           </motion.div>
         )}

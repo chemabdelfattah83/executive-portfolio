@@ -2,3 +2,5 @@ cd C:\Users\Engineering\Desktop\executive-portfolio
 git add .
 git commit -m "final update"
 git push
+git commit --allow-empty -m "force deploy"
+git push origin main
