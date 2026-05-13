@@ -1,114 +1,142 @@
-"use client";
-
 import { motion } from "framer-motion";
-import {
-  Mail,
-  Phone,
-  Linkedin,
-  MapPin,
-  Briefcase,
-  Award,
-  Download,
-} from "lucide-react";
 
-export default function ExecutivePortfolio() {
-  const linkedInUrl =
-    "https://www.linkedin.com/in/abd-el-fattah-ali-elewa-a10124a6/";
-
+export default function Portfolio() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900 p-6 md:p-12">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white text-gray-900">
 
       {/* HERO */}
-      <motion.section
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="max-w-5xl mx-auto text-center"
-      >
-        <h1 className="text-4xl md:text-6xl font-bold">
-          Abdelfattah Ali Abdelfattah
-        </h1>
+      <div className="bg-slate-950 text-white">
+        <div className="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-10">
 
-        <p className="text-xl mt-3 text-gray-600">
-          Operations & Commissioning Manager | Oil & Gas Industry
-        </p>
+          {/* IMAGE */}
+          <motion.img
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            src="/profile.jpg"
+            className="w-44 h-44 md:w-56 md:h-56 object-cover rounded-2xl border-4 border-white shadow-2xl"
+          />
 
-        {/* CONTACT */}
-        <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm text-gray-700">
-          <span className="flex items-center gap-2">
-            <Phone size={16} /> +20 101 901 7235
-          </span>
+          {/* INFO */}
+          <div>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-4xl md:text-6xl font-bold"
+            >
+              ABD EL FATTAH ALI ELEWA
+            </motion.h1>
 
-          <span className="flex items-center gap-2">
-            <Mail size={16} /> chem.abdelfattah83@gmail.com
-          </span>
+            <p className="text-slate-300 mt-3 text-lg">
+              Executive Director | Operations & Commissioning | Oil & Gas
+            </p>
 
-          <span className="flex items-center gap-2">
-            <MapPin size={16} /> Egypt / Bahrain
-          </span>
+            <div className="mt-6 grid md:grid-cols-2 gap-2 text-sm text-slate-300">
+              <p>📍 Egypt / Bahrain</p>
+              <p>📞 +20 101 901 7235</p>
+              <p>📞 +973 3702 6658</p>
+              <p>✉️ chem.abdelfattah83@gmail.com</p>
+            </div>
+
+            <a
+              href="/cv.pdf"
+              className="inline-block mt-6 bg-blue-600 px-5 py-2 rounded-xl text-white shadow-lg"
+              download
+            >
+              Download Executive CV
+            </a>
+          </div>
         </div>
+      </div>
 
-        {/* BUTTONS */}
-        <div className="flex flex-wrap justify-center gap-4 mt-8">
-          <a
-            href="/cv.pdf"
-            className="flex items-center gap-2 bg-black text-white px-5 py-2 rounded-xl hover:bg-gray-800 transition"
-          >
-            <Download size={18} /> Download CV
-          </a>
+      {/* KPI SECTION */}
+      <div className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-6">
+        {[
+          { label: "Years Experience", value: "20+" },
+          { label: "Projects Delivered", value: "15+" },
+          { label: "Startups/Commissioning", value: "10+" },
+          { label: "Refinery Units", value: "CDU / VRU / GSU" },
+        ].map((kpi) => (
+          <div key={kpi.label} className="bg-white shadow-xl rounded-2xl p-6 text-center">
+            <h3 className="text-2xl font-bold text-blue-600">{kpi.value}</h3>
+            <p className="text-gray-600 mt-2">{kpi.label}</p>
+          </div>
+        ))}
+      </div>
 
-          <a
-            href={linkedInUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-blue-600 text-white px-5 py-2 rounded-xl hover:bg-blue-700 transition"
-          >
-            <Linkedin size={18} /> LinkedIn
-          </a>
-        </div>
-      </motion.section>
-
-      {/* SUMMARY */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
-        className="max-w-5xl mx-auto mt-12 bg-white p-8 rounded-2xl shadow"
-      >
-        <h2 className="text-2xl font-bold flex items-center gap-2">
-          <Briefcase size={20} /> Professional Summary
-        </h2>
-
-        <p className="mt-4 text-gray-700 leading-relaxed">
-          Senior Operations and Commissioning professional with 20+ years of
-          experience in refinery, petrochemical, gas processing, and oil &
-          gas facilities. Strong expertise in commissioning, start-up,
-          troubleshooting, and plant optimization with high HSE standards.
+      {/* PROFILE */}
+      <div className="max-w-6xl mx-auto px-6 py-10">
+        <h2 className="text-3xl font-bold mb-4">Executive Profile</h2>
+        <p className="text-gray-700 leading-8">
+          Executive-level Operations & Commissioning leader with 20+ years experience in
+          refinery and petrochemical mega projects. Proven track record in leading
+          large-scale startups, turnaround execution, operational excellence,
+          and cross-functional leadership in high-risk environments.
         </p>
-      </motion.section>
+      </div>
+
+      {/* CORE SKILLS */}
+      <div className="max-w-6xl mx-auto px-6 py-10">
+        <h2 className="text-3xl font-bold mb-6">Core Leadership Competencies</h2>
+
+        <div className="flex flex-wrap gap-3">
+          {[
+            "Strategic Operations Leadership",
+            "Commissioning & Startup Excellence",
+            "Refinery Mega Projects",
+            "Turnaround Management",
+            "Process Safety Leadership",
+            "DCS / SCADA Integration",
+            "Operational Readiness",
+            "Risk Management",
+            "Energy Optimization",
+          ].map((s) => (
+            <span key={s} className="px-4 py-2 bg-slate-100 rounded-full shadow-sm">
+              {s}
+            </span>
+          ))}
+        </div>
+      </div>
 
       {/* EXPERIENCE */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-        className="max-w-5xl mx-auto mt-8 bg-white p-8 rounded-2xl shadow"
-      >
-        <h2 className="text-2xl font-bold flex items-center gap-2">
-          <Award size={20} /> Key Experience
-        </h2>
+      <div className="max-w-6xl mx-auto px-6 py-10 space-y-10">
+        <h2 className="text-3xl font-bold">Executive Experience</h2>
 
-        <ul className="mt-4 space-y-3 text-gray-700 list-disc pl-5">
-          <li>Commissioning & Start-up leadership for large-scale plants</li>
-          <li>DCS / PLC Control Room Operations</li>
-          <li>Process optimization and troubleshooting</li>
-          <li>HSE compliance and operational safety leadership</li>
-        </ul>
-      </motion.section>
+        <div className="bg-white shadow-xl rounded-2xl p-6">
+          <h3 className="text-xl font-semibold">Operations & Maintenance Manager</h3>
+          <p className="text-gray-500">EPROM | 2025 – Present</p>
+          <p className="mt-3 text-gray-700">
+            Leading full operational control of oil & gas facilities ensuring safety,
+            reliability, and production optimization.
+          </p>
+        </div>
 
-      {/* FOOTER */}
-      <footer className="text-center text-sm text-gray-500 mt-12">
-        © {new Date().getFullYear()} Executive Portfolio | Built with Next.js
-      </footer>
-    </main>
+        <div className="bg-white shadow-xl rounded-2xl p-6">
+          <h3 className="text-xl font-semibold">Commissioning Lead (CDU-4 / VRU-3)</h3>
+          <p className="text-gray-500">PETROJET / EPROM | 2022 – 2025</p>
+          <p className="mt-3 text-gray-700">
+            Led pre-commissioning, startup, system turnover, and DCS-based stabilization
+            for major refinery expansion units.
+          </p>
+        </div>
+
+        <div className="bg-white shadow-xl rounded-2xl p-6">
+          <h3 className="text-xl font-semibold">Senior Operations Supervisor</h3>
+          <p className="text-gray-500">MIDOR Refinery | 2008 – 2022</p>
+          <p className="mt-3 text-gray-700">
+            Supported refinery expansion startup and managed operations using
+            Yokogawa, Honeywell, Emerson DeltaV systems.
+          </p>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="bg-slate-950 text-white py-12 text-center">
+        <h2 className="text-2xl font-bold">Executive Profile Available for Global Opportunities</h2>
+        <p className="text-slate-300 mt-2">Oil & Gas | Refinery | Petrochemical Leadership Roles</p>
+      </div>
+
+    </div>
   );
 }
