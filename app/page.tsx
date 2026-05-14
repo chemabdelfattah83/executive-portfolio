@@ -8,22 +8,26 @@ export default function CVPage() {
 
       {/* ================= BACKGROUND ================= */}
       <div className="fixed inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-950 to-black" />
 
-        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,rgba(234,179,8,0.18),transparent_60%)]" />
+        {/* Banner Image (VISIBLE now) */}
+        <img
+          src="/banner.jpg"
+          alt="banner"
+          className="w-full h-full object-cover opacity-25"
+        />
 
-        <div className="absolute inset-0 bg-[url('/banner.jpg')] bg-cover bg-center opacity-10 scale-110" />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/70" />
+
+        {/* Gold glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(234,179,8,0.18),transparent_60%)]" />
       </div>
 
       {/* ================= HEADER ================= */}
       <header className="relative z-10 px-6 md:px-20 py-10 flex justify-between items-center">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-xl md:text-2xl font-bold tracking-[6px] text-yellow-400"
-        >
+        <h1 className="text-yellow-400 tracking-[6px] font-bold text-xl">
           EXECUTIVE CV
-        </motion.h1>
+        </h1>
 
         <a
           href="/CV.pdf"
@@ -35,29 +39,44 @@ export default function CVPage() {
       </header>
 
       {/* ================= HERO ================= */}
-      <section className="relative z-10 px-6 md:px-20 pt-6 pb-16">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="backdrop-blur-2xl bg-white/5 border border-zinc-800 rounded-3xl p-10 md:p-16 shadow-[0_0_120px_rgba(234,179,8,0.08)]"
-        >
+      <section className="relative z-10 px-6 md:px-20 pt-6 pb-20">
 
-          <h2 className="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-white via-yellow-200 to-yellow-500 text-transparent bg-clip-text">
-            Abdelfattah Ali Eliwa
-          </h2>
+        <div className="backdrop-blur-2xl bg-white/5 border border-zinc-800 rounded-3xl p-10 md:p-16 shadow-[0_0_120px_rgba(234,179,8,0.10)]">
 
-          <p className="mt-6 text-yellow-400 tracking-[6px] uppercase">
-            Senior Operations & Commissioning Specialist
-          </p>
+          {/* PROFILE IMAGE (RETURNED + FIXED) */}
+          <div className="flex flex-col items-center text-center">
 
-          <p className="mt-4 text-gray-400 max-w-3xl leading-8">
-            20+ years of experience in Oil & Gas mega projects across refinery,
-            gas processing, commissioning, startup, shutdown management and EPC execution.
-          </p>
+            <motion.img
+              initial={{ scale: 0.7, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              src="/profile.jpg"
+              alt="profile"
+              className="
+                w-44 h-44 md:w-52 md:h-52
+                rounded-full
+                border-4 border-yellow-500
+                shadow-[0_0_80px_rgba(234,179,8,0.5)]
+                object-cover
+              "
+            />
+
+            <h2 className="mt-8 text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-white via-yellow-200 to-yellow-500 text-transparent bg-clip-text">
+              Abdelfattah Ali Eliwa
+            </h2>
+
+            <p className="mt-4 text-yellow-400 tracking-[6px] uppercase">
+              Senior Operations & Commissioning Specialist
+            </p>
+
+            <p className="mt-6 text-gray-400 max-w-3xl leading-8">
+              20+ years of experience in Oil & Gas mega projects across refinery,
+              gas processing, commissioning, startup, shutdown management and EPC execution.
+            </p>
+          </div>
 
           {/* STATS */}
-          <div className="grid md:grid-cols-3 gap-6 mt-10">
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
             {[
               ["Experience", "20+ Years"],
               ["Industry", "Oil & Gas / Petrochemical"],
@@ -74,7 +93,8 @@ export default function CVPage() {
               </div>
             ))}
           </div>
-        </motion.div>
+
+        </div>
       </section>
 
       {/* ================= EXPERIENCE ================= */}
@@ -91,50 +111,14 @@ export default function CVPage() {
             "EPC Project Delivery & Multinational Leadership",
             "Safety Systems & Operational Excellence Implementation"
           ].map((item, i) => (
-            <motion.div
+            <div
               key={i}
-              whileHover={{ scale: 1.02 }}
               className="p-6 rounded-2xl bg-white/5 border border-zinc-800 hover:border-yellow-500 transition"
             >
               <p className="text-gray-200 text-lg">{item}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* ================= ACHIEVEMENTS ================= */}
-      <section className="relative z-10 px-6 md:px-20 pb-24">
-        <h3 className="text-3xl md:text-5xl font-bold text-yellow-400 mb-10">
-          Key Achievements
-        </h3>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          {[
-            "Delivered refinery & gas plant startups under critical timelines",
-            "Led multinational EPC commissioning teams across major projects",
-            "Improved operational efficiency across industrial assets",
-            "Implemented robust safety & operational excellence frameworks"
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="p-6 rounded-2xl bg-black/40 border border-zinc-800"
-            >
-              <p className="text-gray-300 leading-7">{item}</p>
             </div>
           ))}
         </div>
-      </section>
-
-      {/* ================= DOWNLOAD CTA ================= */}
-      <section className="relative z-10 px-6 md:px-20 pb-32 text-center">
-        <motion.a
-          whileHover={{ scale: 1.05 }}
-          href="/CV.pdf"
-          target="_blank"
-          className="inline-block px-12 py-4 rounded-full bg-yellow-500 text-black font-bold shadow-[0_0_80px_rgba(234,179,8,0.35)] hover:shadow-[0_0_120px_rgba(234,179,8,0.5)] transition"
-        >
-          Download Full CV (PDF)
-        </motion.a>
       </section>
 
       {/* ================= FOOTER ================= */}
