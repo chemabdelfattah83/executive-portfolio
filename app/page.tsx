@@ -11,7 +11,7 @@ export default function CVPage() {
 
         {/* Banner Image (VISIBLE now) */}
         <img
-          src="/banner.jpg"
+          src="/banner.png"
           alt="banner"
           className="w-full h-full object-cover opacity-25"
         />
