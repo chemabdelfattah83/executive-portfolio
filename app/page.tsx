@@ -8,18 +8,12 @@ export default function CVPage() {
 
       {/* ================= BACKGROUND ================= */}
       <div className="fixed inset-0">
-
-        {/* Banner Image (VISIBLE now) */}
         <img
           src="/banner.png"
           alt="banner"
           className="w-full h-full object-cover opacity-25"
         />
-
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/70" />
-
-        {/* Gold glow */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(234,179,8,0.18),transparent_60%)]" />
       </div>
 
@@ -39,26 +33,19 @@ export default function CVPage() {
       </header>
 
       {/* ================= HERO ================= */}
-      <section className="relative z-10 px-6 md:px-20 pt-6 pb-20">
+      <section className="relative z-10 px-6 md:px-20 pt-6 pb-16">
 
-        <div className="backdrop-blur-2xl bg-white/5 border border-zinc-800 rounded-3xl p-10 md:p-16 shadow-[0_0_120px_rgba(234,179,8,0.10)]">
+        <div className="backdrop-blur-2xl bg-white/5 border border-zinc-800 rounded-3xl p-10 md:p-16">
 
-          {/* PROFILE IMAGE (RETURNED + FIXED) */}
           <div className="flex flex-col items-center text-center">
 
+            {/* PROFILE */}
             <motion.img
-              initial={{ scale: 0.7, opacity: 0 }}
+              initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
               src="/profile.jpg"
               alt="profile"
-              className="
-                w-44 h-44 md:w-52 md:h-52
-                rounded-full
-                border-4 border-yellow-500
-                shadow-[0_0_80px_rgba(234,179,8,0.5)]
-                object-cover
-              "
+              className="w-44 h-44 md:w-52 md:h-52 rounded-full border-4 border-yellow-500 shadow-[0_0_80px_rgba(234,179,8,0.5)] object-cover"
             />
 
             <h2 className="mt-8 text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-white via-yellow-200 to-yellow-500 text-transparent bg-clip-text">
@@ -69,36 +56,45 @@ export default function CVPage() {
               Senior Operations & Commissioning Specialist
             </p>
 
-            <p className="mt-6 text-gray-400 max-w-3xl leading-8">
-              20+ years of experience in Oil & Gas mega projects across refinery,
-              gas processing, commissioning, startup, shutdown management and EPC execution.
+            <p className="mt-6 text-gray-400 max-w-3xl">
+              20+ years in Oil & Gas mega projects, refinery operations, commissioning, startup and EPC delivery.
             </p>
-          </div>
 
-          {/* STATS */}
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
-            {[
-              ["Experience", "20+ Years"],
-              ["Industry", "Oil & Gas / Petrochemical"],
-              ["Focus", "Operations & Commissioning"]
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="p-6 rounded-2xl bg-black/40 border border-zinc-800"
+            {/* ================= SOCIAL BUTTONS (RETURNED) ================= */}
+            <div className="flex gap-4 mt-8 flex-wrap justify-center">
+
+              <a
+                href="https://www.linkedin.com/in/abd-el-fattah-ali-elewa-a10124a6/"
+                target="_blank"
+                className="px-6 py-3 rounded-full border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition"
               >
-                <p className="text-gray-400 text-sm">{item[0]}</p>
-                <p className="text-xl font-bold text-yellow-400 mt-2">
-                  {item[1]}
-                </p>
-              </div>
-            ))}
+                LinkedIn Profile
+              </a>
+
+              <a
+                href="#contact"
+                className="px-6 py-3 rounded-full border border-zinc-700 hover:border-yellow-500 transition"
+              >
+                Contact Info
+              </a>
+
+              <a
+                href="/CV.pdf"
+                target="_blank"
+                className="px-6 py-3 rounded-full bg-yellow-500 text-black font-bold hover:scale-105 transition"
+              >
+                Download CV
+              </a>
+
+            </div>
+
           </div>
 
         </div>
       </section>
 
       {/* ================= EXPERIENCE ================= */}
-      <section className="relative z-10 px-6 md:px-20 pb-20">
+      <section className="relative z-10 px-6 md:px-20 pb-16">
         <h3 className="text-3xl md:text-5xl font-bold text-yellow-400 mb-10">
           Core Expertise
         </h3>
@@ -115,9 +111,27 @@ export default function CVPage() {
               key={i}
               className="p-6 rounded-2xl bg-white/5 border border-zinc-800 hover:border-yellow-500 transition"
             >
-              <p className="text-gray-200 text-lg">{item}</p>
+              {item}
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ================= CONTACT (RETURNED + FIXED) ================= */}
+      <section
+        id="contact"
+        className="relative z-10 px-6 md:px-20 pb-24"
+      >
+        <h3 className="text-3xl md:text-5xl font-bold text-yellow-400 mb-10">
+          Contact
+        </h3>
+
+        <div className="bg-white/5 border border-zinc-800 rounded-3xl p-10 backdrop-blur-xl space-y-4 text-lg">
+
+          <p>📍 Egypt: +20 101 901 7235</p>
+          <p>📍 Bahrain: +973 3702 6658</p>
+          <p>📧 chem.abdelfattah83@gmail.com</p>
+
         </div>
       </section>
 
