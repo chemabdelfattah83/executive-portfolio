@@ -43,7 +43,7 @@ export default function CVPage() {
             <motion.img
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              src="/profile.jpg"
+              src="/profile.png"
               alt="profile"
               className="w-44 h-44 md:w-52 md:h-52 rounded-full border-4 border-yellow-500 shadow-[0_0_80px_rgba(234,179,8,0.5)] object-cover"
             />
