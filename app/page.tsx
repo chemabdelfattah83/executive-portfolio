@@ -49,7 +49,7 @@ export default function CVPage() {
             />
 
             <h2 className="mt-8 text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-white via-yellow-200 to-yellow-500 text-transparent bg-clip-text">
-              Abdelfattah Ali Eliwa
+              Abdelfattah Ali Elewa
             </h2>
 
             <p className="mt-4 text-yellow-400 tracking-[6px] uppercase">
