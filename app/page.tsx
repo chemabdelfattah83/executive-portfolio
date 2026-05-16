@@ -130,7 +130,7 @@ export default function CVPage() {
 
           <p>📍 Egypt: +20 101 901 7235</p>
           <p>📍 Bahrain: +973 3702 6658</p>
-          <p>📧 chem.abdelfattah83@gmail.com</p>
+          <p>📧 abdelfattah.ali@astrapetroleum.com</p>
 
         </div>
       </section>
