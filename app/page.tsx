@@ -101,9 +101,16 @@ export default function CVPage() {
 
         <div className="space-y-6">
           {[
-            "Refinery & Gas Processing Operations Optimization",
-            "Commissioning & Pre-Commissioning Execution",
-            "Startup & Shutdown Management of Mega Facilities",
+            "Senior Refinery & Gas Operations Leadership",
+            "Commissioning & Operational Readiness Execution",
+            "Mega Projects Startup & Turnaround Management",
+            "Process Optimization & Production Reliability",
+            "EPC Coordination & Multinational Team Leadership",
+            "Process Safety, HSE & Risk Mitigation",
+            "Utilities, Offsites & Energy Systems Operations",
+            "Operational Excellence & Continuous Improvement",
+            "High-Performance Operations Management",
+            "Strategic Industrial Operations Planning"
             "EPC Project Delivery & Multinational Leadership",
             "Safety Systems & Operational Excellence Implementation"
           ].map((item, i) => (
