@@ -93,36 +93,36 @@ export default function CVPage() {
         </div>
       </section>
 
-      {/* ================= EXPERIENCE ================= */}
-      <section className="relative z-10 px-6 md:px-20 pb-16">
-        <h3 className="text-3xl md:text-5xl font-bold text-yellow-400 mb-10">
-          Core Expertise
-        </h3>
+     {/* ================= EXPERIENCE ================= */}
+<section className="relative z-10 px-6 md:px-20 pb-16">
+  <h3 className="text-3xl md:text-5xl font-bold text-yellow-400 mb-10">
+    Core Expertise
+  </h3>
 
-        <div className="space-y-6">
-          {[
-            "Senior Refinery & Gas Operations Leadership",
-            "Commissioning & Operational Readiness Execution",
-            "Mega Projects Startup & Turnaround Management",
-            "Process Optimization & Production Reliability",
-            "EPC Coordination & Multinational Team Leadership",
-            "Process Safety, HSE & Risk Mitigation",
-            "Utilities, Offsites & Energy Systems Operations",
-            "Operational Excellence & Continuous Improvement",
-            "High-Performance Operations Management",
-            "Strategic Industrial Operations Planning"
-            "EPC Project Delivery & Multinational Leadership",
-            "Safety Systems & Operational Excellence Implementation"
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="p-6 rounded-2xl bg-white/5 border border-zinc-800 hover:border-yellow-500 transition"
-            >
-              {item}
-            </div>
-          ))}
-        </div>
-      </section>
+  <div className="space-y-6">
+    {[
+      "Senior Refinery & Gas Operations Leadership",
+      "Commissioning & Operational Readiness Execution",
+      "Mega Projects Startup & Turnaround Management",
+      "Process Optimization & Production Reliability",
+      "EPC Coordination & Multinational Team Leadership",
+      "Process Safety, HSE & Risk Mitigation",
+      "Utilities, Offsites & Energy Systems Operations",
+      "Operational Excellence & Continuous Improvement",
+      "High-Performance Operations Management",
+      "Strategic Industrial Operations Planning",
+      "EPC Project Delivery & Multinational Leadership",
+      "Safety Systems & Operational Excellence Implementation"
+    ].map((item, i) => (
+      <div
+        key={i}
+        className="p-6 rounded-2xl bg-white/5 border border-zinc-800 hover:border-yellow-500 transition"
+      >
+        {item}
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* ================= CONTACT (RETURNED + FIXED) ================= */}
       <section
