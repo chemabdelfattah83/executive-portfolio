@@ -64,7 +64,7 @@ export default function CVPage() {
             <div className="flex gap-4 mt-8 flex-wrap justify-center">
 
               <a
-                href="https://www.linkedin.com/in/abd-el-fattah-ali-elewa-a10124a6/"
+                href="https://www.linkedin.com/in/abd-elfattah-elewa/"
                 target="_blank"
                 className="px-6 py-3 rounded-full border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition"
               >
@@ -137,8 +137,10 @@ export default function CVPage() {
 
           <p>📍 Egypt: +20 101 901 7235</p>
           <p>📍 Bahrain: +973 3702 6658</p>
-          <p>📧 abdelfattah.ali@astrapetroleum.com,abdelfattah.ali@astraconcepts.com</p>
-
+          <p>📧 abdelfattah.ali@astrapetroleum.com</p>
+          <p>📧 abdelfattah.ali@astraconcepts.com</p>
+          <p>📧 https://abdelfattah-elewa.vercel.app/</p>
+          <p>📧https://www.linkedin.com/in/abd-elfattah-elewa/</p>
         </div>
       </section>
 
