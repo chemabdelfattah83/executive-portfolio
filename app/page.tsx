@@ -137,8 +137,6 @@ export default function CVPage() {
 
           <p>📍 Egypt: +20 101 901 7235</p>
           <p>📍 Bahrain: +973 3702 6658</p>
-          <p>📧 abdelfattah.ali@astrapetroleum.com</p>
-          <p>📧 abdelfattah.ali@astraconcepts.com</p>
           <p>📧 https://abdelfattah-elewa.vercel.app/</p>
           <p>📧https://www.linkedin.com/in/abd-elfattah-elewa/</p>
         </div>
